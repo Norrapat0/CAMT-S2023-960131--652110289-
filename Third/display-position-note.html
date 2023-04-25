@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pa {
+            width: 1440px;
+            height: unset;
+            padding: 25px;
+            border: 2px dotted black;
+
+        }
+
+        .ma {
+            display: inline;
+            background-color: rgb(233, 103, 103);
+        }
+
+        .blox {
+            display: block;
+        }
+
+        .inboc {
+            display: inline-block;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .ubo {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Box Model</h1>
+    <div class="pa">
+        <div style="
+        background-color: aqua;
+        padding: 25px;">
+            <div style="padding: 25px;
+        background-color: azure;
+        border: 25px solid yellow;">
+                <div style="
+                background-color: rgb(85, 85, 221);">
+
+                    simple box
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <h2>CSS Display</h2>
+    <h2>inline</h2>
+    <div class="pa">
+        <div class="ma" style="background-color: aqua;">inline text1 </div>
+        <div class="ma">inline text2 </div>
+        <div class="ma" style="background-color: rgb(96, 234, 131);">inline text3 </div>
+        <div class="ma" style="background-color: rgb(186, 212, 35);">inline text4 </div>
+    </div>
+
+    <h2>block</h2>
+    <div class="pa">
+        <div class="blox" style="background-color: bisque;">block text1</div>
+        <div class="blox" style="background-color: rgb(213, 125, 18);">block text2</div>
+        <div class="blox" style="background-color: rgb(92, 15, 225);">block text3</div>
+        <div class="blox" style="background-color: rgb(24, 233, 65);">block text4</div>
+        <div class="blox" style="background-color: rgb(199, 16, 35);">block text5</div>
+    </div>
+    <h2>inline-block</h2>
+    <div class="pa">
+        <div class="inboc">apple</div>
+        <div class="inboc">mango</div>
+        <div class="inboc">orange</div>
+        <div class="inboc">water melon</div>
+    </div>
+
+    <h2>none</h2>
+    <div class="pa">
+        <div class="inboc">apple</div>
+        <div class="inboc">mango</div>
+        <div class="inboc">orange</div>
+        <div style="display: none;">water melon</div>
+    </div>
+    <h2>display:none vs visible:hidden</h2>
+    <div class="pa">
+        <div class="inboc">apple</div>
+        <div class="inboc" style="visibility: hidden;">mango</div>
+        <div class="inboc">orange</div>
+        <div class="inboc" style="visibility: hidden;">water melon</div>
+    </div>
+    <h1>CSS Position</h1>
+    <h2>static</h2>
+    <div class="pa">
+        <div class="box" style="position: static;"> </div>
+    </div>
+    <h2>absolute</h2>
+    <h3>fixed width/height</h3>
+    <div class="pa">
+        <div class="box" style="position: absolute;"> </div>
+    </div>
+    <h3>No width/height</h3>
+    <div class="pa">
+        <div class="box" style="position: absolute;width: unset;height: unset;border: 2px solid blue;"> </div>
+    </div>
+    <h3>fixed width/height + right/top</h3>
+    <div class="pa">
+        <div style="
+            position: relative;
+            border: 2px solid #1900ff;
+            width: 100%;
+            height: 100px;
+            background-color: rgb(33, 158, 150);
+            
+            ">
+            <div style="
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: rgb(194, 52, 52);
+            color: #ffff;
+            position: absolute;
+            right: -12px;
+            top: -12px;
+            text-align: center;
+            ">x</div>
+            <h2>backdrop + banner</h2>
+            <div style="
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: rgba(0, 0, 0, 0.267);
+                ">
+                <div style="
+                  background-color: rgba(69, 214, 93, 0.862);
+                  color: rgb(226, 177, 121);
+                  font-size: 32px;
+                  text-align: center;
+                  width: 300px;
+                  margin: 0 auto;
+                  margin-top: 300px;
+                  transform: translateY(50%);
+                ">
+                    ALOHA
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
