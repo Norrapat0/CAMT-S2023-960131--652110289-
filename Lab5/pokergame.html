@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        window.onload = function () {
+            var title = document.createElement('h1')
+            title.innerText = 'hello world'
+
+            var body = document.getElementsByTagName('body')[0]
+            body.append(title)
+            var redBox = document.createElement('div')
+            redBox.style.width = '200px'
+            redBox.style.height = '200px'
+            redBox.style.backgroundColor = 'red'
+
+            var button = document.createElement('buttom')
+            button.innerText = 'Click me'
+
+            button.addEventListener('click', function () {
+                console.log('redBox:clicked')
+            })
+
+
+
+            var bluelock = document.createElement('div')
+            bluelock.style.width = '150px'
+            bluelock.style.height = '150px'
+            bluelock.style.backgroundColor = 'blue'
+
+            button.addEventListener('click', function () {
+                console.log('bluelock:clicked')
+            })
+
+
+
+            bluelock.append(button)
+            redBox.append(bluelock)
+            body.append(redBox)
+
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
