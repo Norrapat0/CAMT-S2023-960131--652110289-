@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+
+<body>
+
+    <div class="scene scene--othello">
+        <div class="othello">
+          <div class="othello_face othello_facefront"><div class="circle"></div></div>
+          <div class="othello_face othello_faceback"><div class="circle-button"></div></div>
+        </div>
+      </div>
+      <p>Click card to flip.</p>
+
+      
+</body>
+
+</html>
+<script>
+        var card = document.querySelector('.othello')
+        card.addEventListener('click', function () {
+            card.classList.toggle('is-flipped');
+        });
+    </script>
+<style>
+   
+   body { font-family: sans-serif; }
+
+.scene {
+  width: 200px;
+  height: 260px;
+  border: 1px solid #CCC;
+  background-color: aquamarine;
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.othello {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.othello.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.othello_face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 260px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  backface-visibility: hidden;
+}
+
+.othello_facefront {
+    
+}
+
+.othello_faceback {
+  
+  transform: rotateY(180deg);
+}
+.circle-button {
+width: 100px;
+
+height: 80px;
+border-radius: 50%;
+background-color: white;
+}
+.circle {
+width: 100px;
+height: 90px;
+border-radius: 50%;
+background-color: black;
+}
+</style>

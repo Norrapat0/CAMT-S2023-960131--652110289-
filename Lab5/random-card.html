@@ -93,34 +93,32 @@
         <h1 style="text-align: center;">Random-card Simulator</h1>
         <div class="box">
 
-            <div class="card" id="line">
+            <div class="card">
                 <div class="top" id="num"> </div>
                 <div class="mid" id="text"> </div>
 
 
             </div>
-            <div class="card" id="line1">
+            <div class="card">
                 <div class="top" id="num1"> </div>
                 <div class="mid" id="text1"> </div>
 
 
             </div>
-            <div class="card" id="line2">
+            <div class="card">
                 <div class="top" id="num2"> </div>
                 <div class="mid" id="text2"> </div>
 
 
             </div>
-            <div class="card" id="line3">
+            <div class="card">
                 <div class="top" id="num3"> </div>
                 <div class="mid" id="text3"> </div>
-
             </div>
 
         </div>
         <div class="bottom" id="randoms">
             Random
-
         </div>
     </div>
 
@@ -130,6 +128,7 @@
 <script>
     window.onload = function () {
         // card number and type
+
         var CARD_TYPE = ['♣', '♦', '♥', '♠']
         var CARD_NUMBER = ['A', '1', '2', '3', '4', '5', '6', ' 7', '8', '9', '10', 'J', 'Q', 'K']
         const listtop = ['num', 'num1', 'num2', 'num3']
@@ -146,24 +145,20 @@
 
                 typetop.textContent = CARD_TYPE[random(CARD_TYPE.length)]
                 num.textContent = CARD_NUMBER[random(CARD_NUMBER.length)]
-                if (typetop.textContent === '♣' || typetop.textContent === '♠') {
-                    for (let j = 0; j < liner.length; j++) {
+                for (let j = 0; j < liner.length; j++) {
+                    if (typetop.textContent === '♣' || typetop.textContent === '♠') {
                         liner[i].style.border = '4px solid black'
+                        typetop.style.color = 'black'
+                        num.style.color = 'black'
+
                     }
-
-                    typetop.style.color = 'black'
-                    num.style.color = 'black'
-
-                }
-                if (typetop.textContent === '♥' || typetop.textContent === '♦') {
-                    for (let j = 0; j < liner.length; j++) {
+                    if (typetop.textContent === '♥' || typetop.textContent === '♦') {
                         liner[i].style.border = '4px solid red'
+                        typetop.style.color = 'red'
+                        num.style.color = 'red'
+
                     }
-                    typetop.style.color = 'red'
-                    num.style.color = 'red'
-
                 }
-
 
             }
         }
